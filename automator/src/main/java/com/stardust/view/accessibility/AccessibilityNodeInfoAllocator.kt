@@ -79,16 +79,16 @@ open class AccessibilityNodeInfoAllocator {
     open fun recycleAll(): Int {
         var notRecycledCount = 0
         val size = mAccessibilityNodeInfoList.size
-        for ((key, value) in mAccessibilityNodeInfoList) {
-            try {
-                key.recycle()
-                notRecycledCount++
-                if (DEBUG)
-                    Log.w(TAG, value)
-            } catch (ignored: IllegalStateException) {
-            }
-
-        }
+//        for ((key, value) in mAccessibilityNodeInfoList) {
+//            try {
+//                key.recycle()
+//                notRecycledCount++
+//                if (DEBUG)
+//                    Log.w(TAG, value)
+//            } catch (ignored: IllegalStateException) {
+//            }
+//
+//        }
         Log.v(TAG, "Total: $size Not recycled: $notRecycledCount")
         return notRecycledCount
     }

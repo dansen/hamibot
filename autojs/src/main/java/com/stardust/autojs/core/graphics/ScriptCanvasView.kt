@@ -53,18 +53,18 @@ class ScriptCanvasView(context: Context, private val mScriptRuntime: ScriptRunti
                 var time = SystemClock.uptimeMillis()
                 val scriptCanvas = ScriptCanvas()
                 try {
-                    while (mDrawing) {
-                        canvas = lockCanvas()
-                        scriptCanvas.setCanvas(canvas)
-                        emit("draw", scriptCanvas, this@ScriptCanvasView)
-                        unlockCanvasAndPost(canvas)
-                        canvas = null
-                        val dt = mTimePerDraw - (SystemClock.uptimeMillis() - time)
-                        if (dt > 0) {
-                            sleep(dt)
-                        }
-                        time = SystemClock.uptimeMillis()
-                    }
+//                    while (mDrawing) {
+//                        canvas = lockCanvas()
+//                        scriptCanvas.setCanvas(canvas)
+//                        emit("draw", scriptCanvas, this@ScriptCanvasView)
+//                        unlockCanvasAndPost(canvas)
+//                        canvas = null
+//                        val dt = mTimePerDraw - (SystemClock.uptimeMillis() - time)
+//                        if (dt > 0) {
+//                            sleep(dt)
+//                        }
+//                        time = SystemClock.uptimeMillis()
+//                    }
                 } catch (e: Exception) {
                     mScriptRuntime.exit(e)
                     mDrawing = false

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-kapt'
 
@@ -53,6 +54,7 @@ android {
         disable 'MissingTranslation'
         disable 'ExtraTranslation'
     }
+    namespace 'com.hamibot.hamibot'
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
     }
